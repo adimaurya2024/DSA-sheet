@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+      int count[26] = {0};
+      for(auto x : s)
+      {
+          count[x-'a']++;
+      }  
+      for(auto x : t)
+      {
+          count[x-'a']--;
+      }
+      for(auto freq : count)
+      {
+          if(freq!=0)
+          {
+              return false;
+          }
+      }
+      return true;
+    }
+};
